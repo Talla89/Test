@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+	<section>
+		<h1>Equipage</h1>
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col">
+					<div class="card-body">
+						<h2>Ajout de nouveaux membres à l'équipage</h2>
+
+						{{ form(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+
+			<h2>Liste des membres de l'équipage</h2>
+			<table class="table">
+				{% for equipage in equipage %}
+
+					<thead>
+						<tr>
+							<th scope="col">Nom</th>
+							<th scope="col">Prénom</th>
+							<th scope="col">Email</th>
+							<th scope="col">Adresse</th>
+							<th scope="col">Ville</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>{{equipage.fistName}}</th>
+							<th>{{equipage.lastName}}</th>
+							<th>{{equipage.email}}</th>
+							<th>{{equipage.adress}}</th>
+							<th>{{equipage.city}}</th>
+						</tr>
+					</tbody>
+
+				{% endfor %}
+			</table>
+
+
+		</div>
+	</section>
+{% endblock %}
